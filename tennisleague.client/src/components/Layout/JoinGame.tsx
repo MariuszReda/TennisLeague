@@ -1,4 +1,4 @@
-import { Dialog, DialogTitle, DialogContent, DialogActions, Button, Typography, Popover, type PopoverOrigin, Box } from '@mui/material';
+import {Button, Typography, Popover, type PopoverOrigin, Box } from '@mui/material';
 
 interface JoinGameProps {
   anchorEl: HTMLElement | null;
@@ -8,7 +8,6 @@ interface JoinGameProps {
 
 export default function JoinGame({open, onClose,anchorEl}: JoinGameProps){
   const id = open ? 'join-game-popover' : undefined;
-
   return (
     <Popover
       id={id}
@@ -44,5 +43,4 @@ export default function JoinGame({open, onClose,anchorEl}: JoinGameProps){
       </Box>
     </Popover>
   );
-
 }

@@ -1,10 +1,7 @@
 import { AppBar,Typography, Box, Toolbar, IconButton, Button } from "@mui/material";
-import RankingTable from "../Table/RankingTable";
 import { useState } from "react";
-import JoinGame from "./JoinGame";
-import Sidebar from "./Sidebar";
 import {Menu ,Brightness4 , SportsBaseball} from "@mui/icons-material";
-
+import JoinGame from "./JoinGame";
 
 
 export default function Navbar({ onToggleSidebar }: { onToggleSidebar: () => void }) {
@@ -18,7 +15,6 @@ const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const open = Boolean(anchorEl);    
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", height: "100vh" }}>
       <AppBar position="sticky" color="primary" elevation={1}>
         <Toolbar sx={{ display: "flex", justifyContent: "space-between", px: 2, alignItems:'center' }}>
           <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
@@ -27,13 +23,12 @@ const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
             </IconButton>
 
           </Box>
-
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1}}>
             <SportsBaseball />
             <Typography variant="h6" noWrap>
                 Liga Tenisowa
             </Typography>
-            </Box>
+          </Box>
 
 
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
@@ -45,13 +40,5 @@ const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
           </Box>
         </Toolbar>
       </AppBar>
-
-      <Box sx={{ display: "flex", flexGrow: 1 }}>
-        <Sidebar />
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-            <RankingTable/>
-        </Box>
-      </Box>
-    </Box>
   );
 }
