@@ -32,7 +32,7 @@ if (!fs.existsSync(certFilePath) || !fs.existsSync(keyFilePath)) {
 // const target = env.ASPNETCORE_HTTPS_PORT ? `https://localhost:${env.ASPNETCORE_HTTPS_PORT}` :
 //     env.ASPNETCORE_URLS ? env.ASPNETCORE_URLS.split(';')[0] : 'https://localhost:7294';
 
-const target = 'https://localhost:7176';
+const target = 'http://localhost:5227';
 console.log("Używany target (na sztywno):");
 console.error("🔧 DEBUG: używany target:");
 
@@ -45,8 +45,8 @@ export default defineConfig({
     },
     server: {
         proxy: {
-            '^/api': {
-                target,
+            '/api': {
+                target: target,
                 secure: false
             }
         },
