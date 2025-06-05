@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import RankingTable from "../pages/RankingTable";
 import { useState } from "react";
 import Sidebar from "./Sidebar";
+import { Outlet } from "react-router-dom";
 
 export default function Layout() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -17,7 +18,8 @@ export default function Layout() {
       <Box sx={{ display: "flex", flexGrow: 1 }}>
         {sidebarOpen && <Sidebar />}
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-          <RankingTable />
+          {/* <RankingTable /> */}
+          <Outlet />
         </Box>
       </Box>
     </Box>

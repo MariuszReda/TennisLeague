@@ -1,13 +1,11 @@
-import React from "react";
-import { List, ListItem,ListItemButton, ListItemText, Toolbar, Box, Paper, Divider, Typography, ListItemIcon } from "@mui/material";
-import DashboardIcon from "@mui/icons-material/Dashboard";
+import { List, ListItem,ListItemButton, ListItemText, Paper, Divider, Typography, ListItemIcon } from "@mui/material";
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import BarChartIcon from "@mui/icons-material/BarChart";
 import SportsTennisIcon from '@mui/icons-material/SportsTennis';
-import LeaderboardIcon from '@mui/icons-material/Leaderboard';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import TableChartIcon from '@mui/icons-material/TableChart';
 import HomeIcon from '@mui/icons-material/Home';
+import { Link } from "react-router-dom";
 
 export default function Sidebar() {
   return (
@@ -16,25 +14,25 @@ export default function Sidebar() {
           <List>
             <Typography variant="subtitle2" sx={{ px: 2, pt: 2 }}>Menu główne</Typography>
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton component={Link} to="/">
                 <ListItemIcon><HomeIcon fontSize="large"/></ListItemIcon>
                 <ListItemText primary="Aktualności" />
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton component={Link} to={"/table"}>
                 <ListItemIcon><TableChartIcon fontSize="large"/></ListItemIcon>
                 <ListItemText primary="Tabela" />
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton component={Link} to={"/games"}>
                 <ListItemIcon><SportsTennisIcon fontSize="large"/></ListItemIcon>
                 <ListItemText primary="Moje mecze" />
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton component={Link} to={"/schedule"}>
                 <ListItemIcon><CalendarMonthIcon fontSize="large"/></ListItemIcon>
                 <ListItemText primary="Terminarz" />
               </ListItemButton>

@@ -1,11 +1,15 @@
-import { useEffect, useState } from 'react';
-import Navbar from './components/Layout/Navbar';
-import { createTheme, ThemeProvider, Container, CssBaseline } from "@mui/material";
+import {useState } from 'react';
+import {CssBaseline } from "@mui/material";
 import Layout from './components/layout/Layout';
 
 
 
 function App() {
+    // const [sidebarOpen, setSidebarOpen] = useState(true);
+
+    // const handleToggleSidebar = () => {
+    // setSidebarOpen((prev) => !prev);
+    // };
     return(
         <>
             <CssBaseline />
