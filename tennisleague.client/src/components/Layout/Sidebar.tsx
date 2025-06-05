@@ -6,6 +6,8 @@ import BarChartIcon from "@mui/icons-material/BarChart";
 import SportsTennisIcon from '@mui/icons-material/SportsTennis';
 import LeaderboardIcon from '@mui/icons-material/Leaderboard';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import TableChartIcon from '@mui/icons-material/TableChart';
+import HomeIcon from '@mui/icons-material/Home';
 
 export default function Sidebar() {
   return (
@@ -15,19 +17,25 @@ export default function Sidebar() {
             <Typography variant="subtitle2" sx={{ px: 2, pt: 2 }}>Menu główne</Typography>
             <ListItem disablePadding>
               <ListItemButton>
-                <ListItemIcon><DashboardIcon /></ListItemIcon>
+                <ListItemIcon><HomeIcon fontSize="large"/></ListItemIcon>
+                <ListItemText primary="Aktualności" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon><TableChartIcon fontSize="large"/></ListItemIcon>
                 <ListItemText primary="Tabela" />
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
               <ListItemButton>
-                <ListItemIcon><SportsTennisIcon /></ListItemIcon>
+                <ListItemIcon><SportsTennisIcon fontSize="large"/></ListItemIcon>
                 <ListItemText primary="Moje mecze" />
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
               <ListItemButton>
-                <ListItemIcon><CalendarMonthIcon /></ListItemIcon>
+                <ListItemIcon><CalendarMonthIcon fontSize="large"/></ListItemIcon>
                 <ListItemText primary="Terminarz" />
               </ListItemButton>
             </ListItem>
@@ -35,13 +43,13 @@ export default function Sidebar() {
             <Typography variant="subtitle2" sx={{ px: 2 }}>Panel administratora</Typography>
             <ListItem disablePadding>
                 <ListItemButton>
-                  <ListItemIcon><BarChartIcon /></ListItemIcon>
+                  <ListItemIcon><BarChartIcon fontSize="large"/></ListItemIcon>
                   <ListItemText primary="Zarządzaj meczami" />
                 </ListItemButton>
               </ListItem>
               <ListItem disablePadding>
                 <ListItemButton>
-                  <ListItemIcon><ManageAccountsIcon /></ListItemIcon>
+                  <ListItemIcon><ManageAccountsIcon fontSize="large"/></ListItemIcon>
                   <ListItemText primary="Zarządzaj zwodnikami" />
                 </ListItemButton>                         
             </ListItem>
