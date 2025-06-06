@@ -1,10 +1,14 @@
 import { AppBar,Typography, Box, Toolbar, IconButton, Button } from "@mui/material";
 import { useState } from "react";
-import {Menu ,Brightness4 , SportsBaseball} from "@mui/icons-material";
+import {Menu ,Brightness4 , SportsBaseball, ChevronLeft} from "@mui/icons-material";
 import JoinGame from "./JoinGame";
 
+interface NavbarProps {
+  onToggleSidebar: () => void;
+  sidebarCollapsed: boolean;
+}
 
-export default function Navbar({ onToggleSidebar }: { onToggleSidebar: () => void }) {
+export default function Navbar({ onToggleSidebar, sidebarCollapsed }: NavbarProps ) {
 
 const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -19,9 +23,8 @@ const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
         <Toolbar sx={{ display: "flex", justifyContent: "space-between", px: 2, alignItems:'center' }}>
           <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
             <IconButton color="inherit" onClick={onToggleSidebar}>
-              <Menu fontSize="large" />
+              {sidebarCollapsed ? <Menu fontSize="large" /> : <ChevronLeft fontSize="large" />}
             </IconButton>
-
           </Box>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1}}>
             <SportsBaseball />
