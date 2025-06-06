@@ -1,6 +1,5 @@
 import { Box, Toolbar, Typography } from "@mui/material";
 import Navbar from "./Navbar";
-import RankingTable from "../pages/RankingTable";
 import { useState } from "react";
 import Sidebar from "./Sidebar";
 import { Outlet } from "react-router-dom";
@@ -16,9 +15,8 @@ export default function Layout() {
     <Box sx={{ display: "flex", flexDirection: "column", height: "100vh" }}>
       <Navbar onToggleSidebar={handleToggleSidebar} />
       <Box sx={{ display: "flex", flexGrow: 1 }}>
-        {sidebarOpen && <Sidebar />}
+        <Sidebar collapsed={!sidebarOpen} />
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-          {/* <RankingTable /> */}
           <Outlet />
         </Box>
       </Box>

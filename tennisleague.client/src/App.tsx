@@ -5,11 +5,6 @@ import Layout from './components/layout/Layout';
 
 
 function App() {
-    // const [sidebarOpen, setSidebarOpen] = useState(true);
-
-    // const handleToggleSidebar = () => {
-    // setSidebarOpen((prev) => !prev);
-    // };
     return(
         <>
             <CssBaseline />
