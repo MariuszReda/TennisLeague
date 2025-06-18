@@ -1,7 +1,9 @@
-import { AppBar,Typography, Box, Toolbar, IconButton, Button } from "@mui/material";
+import { AppBar,Typography, Box, Toolbar, IconButton, Button, Badge } from "@mui/material";
 import { useState } from "react";
 import {Menu ,Brightness4 , SportsBaseball, ChevronLeft} from "@mui/icons-material";
 import JoinGame from "./JoinGame";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 
 interface NavbarProps {
   onToggleSidebar: () => void;
@@ -35,6 +37,17 @@ const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
 
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <IconButton color="inherit">
+              <Badge badgeContent="2" color="success" anchorOrigin={{
+                  vertical: 'bottom',
+                    horizontal: 'left',
+                  }}>
+                <NotificationsIcon fontSize="large"/>
+              </Badge>
+            </IconButton>
+            <IconButton color="inherit">
+              <AccountCircleIcon fontSize="large"></AccountCircleIcon>
+            </IconButton>
             <Button onClick={handleClick} variant="contained">Wejdź do gry!</Button>
             <JoinGame anchorEl={anchorEl} open={open} onClose={handleClose}/>
             <IconButton color="inherit">
