@@ -1,4 +1,4 @@
-import { List, ListItem,ListItemButton, ListItemText, Paper, Divider, Typography, ListItemIcon } from "@mui/material";
+import { List, Paper, Divider} from "@mui/material";
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import BarChart from "@mui/icons-material/BarChart";
 import SportsTennisIcon from '@mui/icons-material/SportsTennis';
@@ -8,21 +8,12 @@ import HomeIcon from '@mui/icons-material/Home';
 import SidebarItem from "./SidebarItem";
 import EditLocationAltOutlinedIcon from '@mui/icons-material/EditLocationAltOutlined';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
+
   interface Props{
     collapsed: boolean;
   }
 
 export default function Sidebar({collapsed}: Props) {
-
-   const sidebarSectionTitleStyles = (collapsed: boolean) => ({
-      px: 2,
-      pt: 2,
-      opacity: collapsed ? 0 : 1,
-      transition: "opacity 0.3s",
-      whiteSpace: "nowrap",
-      overflow: "hidden",
-    });
-
 
   return (
 
