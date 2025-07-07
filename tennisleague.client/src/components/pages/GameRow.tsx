@@ -7,6 +7,7 @@ import {
   MenuItem,
   Card,
   CardContent,
+  Button,
 } from "@mui/material";
 import { DateTimePicker } from "@mui/x-date-pickers";
 import dayjs, { Dayjs } from "dayjs";
@@ -128,8 +129,22 @@ export function GameRow({
           <Grid size={{xs:12,sm:6, md:2}}>
             <Typography>{match.playerB}</Typography>
           </Grid>
+          {!match.isFinished && (
+          <Grid>
+             <Button
+              onClick={() => handleSave(match.id)}
+              sx={{ mt: 1 }}
+              variant="contained"
+            >
+              Zapisz
+            </Button>
+          </Grid>
+          )
+          }
+
         </Grid>
       </CardContent>
+      
     </Card>
   );
 };

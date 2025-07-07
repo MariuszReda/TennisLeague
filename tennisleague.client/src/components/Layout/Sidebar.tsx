@@ -8,7 +8,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import SidebarItem from "./SidebarItem";
 import EditLocationAltOutlinedIcon from '@mui/icons-material/EditLocationAltOutlined';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
-
+import HelpIcon from '@mui/icons-material/Help';
   interface Props{
     collapsed: boolean;
   }
@@ -24,6 +24,7 @@ export default function Sidebar({collapsed}: Props) {
             <SidebarItem icon={<SportsTennisIcon fontSize="large"/>} text="Moje mecze" to="/games" collapsed={collapsed}></SidebarItem>
             <SidebarItem icon={<CalendarMonthIcon fontSize="large"/>}text="Terminarz" to="/schedule" collapsed={collapsed}></SidebarItem>
             <SidebarItem icon={<MapOutlinedIcon fontSize="large"/>}text="Lista kortów" to="/schedule" collapsed={collapsed}></SidebarItem>
+            <SidebarItem icon={<HelpIcon fontSize="large"/>}text="Regulamin ogólny" to="/schedule" collapsed={collapsed}></SidebarItem>
 
             <Divider sx={{ my: 1 }} />
             <SidebarItem icon={<BarChart fontSize="large"/>} text="Zarządzaj meczami" to="/schedule" collapsed={collapsed}></SidebarItem>

@@ -56,15 +56,6 @@ export default function MyGames(){
             formState={formState[match.id] ?? {}}
             onChange={handleChange}
           />
-          {!match.isFinished && (
-            <Button
-              onClick={() => handleSave(match.id)}
-              sx={{ mt: 1 }}
-              variant="contained"
-            >
-              Zapisz
-            </Button>
-          )}
         </Grid>
       ))}
     </Grid>
