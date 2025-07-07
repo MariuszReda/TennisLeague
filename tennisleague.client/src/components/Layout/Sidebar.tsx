@@ -1,4 +1,4 @@
-import { List, Paper, Divider} from "@mui/material";
+import {List, Paper, Divider} from "@mui/material";
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import BarChart from "@mui/icons-material/BarChart";
 import SportsTennisIcon from '@mui/icons-material/SportsTennis';
@@ -14,17 +14,22 @@ import HelpIcon from '@mui/icons-material/Help';
   }
 
 export default function Sidebar({collapsed}: Props) {
-
   return (
 
-        <Paper elevation={1} sx={{ width:collapsed? 60 :250, height: "100%", transition:"width 0.3s ease", overflowX: "hidden" }}>
+        <Paper elevation={1} sx=
+        {{ width:collapsed? 60 : 250, 
+            height: "100%", 
+            transition:"width 0.3s ease", 
+            overflowX: "hidden",
+            flexShrink: 0,
+            }}>
           <List>
             <SidebarItem icon={<HomeIcon fontSize="large"/>} text="Aktualności" to="/" collapsed={collapsed}></SidebarItem>
             <SidebarItem icon={<TableChartIcon fontSize="large"/>} text="Tabela" to="/table" collapsed={collapsed}></SidebarItem>
             <SidebarItem icon={<SportsTennisIcon fontSize="large"/>} text="Moje mecze" to="/games" collapsed={collapsed}></SidebarItem>
             <SidebarItem icon={<CalendarMonthIcon fontSize="large"/>}text="Terminarz" to="/schedule" collapsed={collapsed}></SidebarItem>
             <SidebarItem icon={<MapOutlinedIcon fontSize="large"/>}text="Lista kortów" to="/schedule" collapsed={collapsed}></SidebarItem>
-            <SidebarItem icon={<HelpIcon fontSize="large"/>}text="Regulamin ogólny" to="/schedule" collapsed={collapsed}></SidebarItem>
+            <SidebarItem icon={<HelpIcon fontSize="large"/>}text="Regulamin ogólny" to="/ragulation" collapsed={collapsed}></SidebarItem>
 
             <Divider sx={{ my: 1 }} />
             <SidebarItem icon={<BarChart fontSize="large"/>} text="Zarządzaj meczami" to="/schedule" collapsed={collapsed}></SidebarItem>

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import type { Match } from "../../model/Match"
 import { MockMatches } from "../layout/Mock/MockMatches";
-import { Button, Card, Grid } from "@mui/material";
-import { GameRow } from "./GameRow";
+import { Grid } from "@mui/material";
+import { MatchRow } from "./MatchRow";
 import { MockCourts } from "../layout/Mock/MockCourts";
 import type { Court } from "../../model/Court";
 
@@ -49,12 +49,13 @@ export default function MyGames(){
     <Grid container spacing={2}>
       {matches.map((match) => (
         <Grid key={match.id} size={12}>
-          <GameRow
+          <MatchRow
             match={match}
             editable={!match.isFinished}
             courts={courts}
             formState={formState[match.id] ?? {}}
             onChange={handleChange}
+            onSave={handleSave}
           />
         </Grid>
       ))}

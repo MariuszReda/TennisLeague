@@ -8,8 +8,9 @@ import {
   Card,
   CardContent,
   Button,
+  Box,
 } from "@mui/material";
-import { DateTimePicker } from "@mui/x-date-pickers";
+import { DatePicker, DateTimePicker } from "@mui/x-date-pickers";
 import dayjs, { Dayjs } from "dayjs";
 import type { Match } from "../../model/Match";
 import type { Court } from "../../model/Court";
@@ -26,14 +27,16 @@ interface MatchRowProps {
     scoreB?: number | null;
   };
   onChange: (matchId: number, newState: MatchRowProps["formState"]) => void;
+  onSave: (matchId: number) => void;
 }
 
-export function GameRow({
+export function MatchRow({
   match,
   editable,
   courts,
   formState,
   onChange,
+  onSave
 }: MatchRowProps) {
   const dateValue = formState.date ?? (match.date ? dayjs(match.date) : null);
   const scoreA = formState.scoreA ?? match.scoreA;
@@ -45,23 +48,32 @@ export function GameRow({
   };
 
   return (
+
     <Card variant="outlined">
       <CardContent>
         <Grid container spacing={2} alignItems="center">
           <Grid size={{xs:12,sm:6, md:2}} >
             {editable ? (
-              <DateTimePicker
+              <DatePicker
                 label="Data meczu"
                 value={dateValue}
                 onChange={(newDate) => handleChange("date", newDate)}
                 slotProps={{ textField: { size: "small", fullWidth: true } }}
               />
             ) : (
-              <>
-                <Typography variant="body2">
-                  {match.date ? dayjs(match.date).format("DD.MM.YYYY HH:mm") : "–"}
-                </Typography>
-              </>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            paddingX: 1,
+            borderRadius: '4px',
+            justifyContent: 'center'
+          }}
+        >
+          <Typography variant="body1">
+            {match.date ? dayjs(match.date).format("DD.MM.YYYY") : "–"}
+          </Typography>
+        </Box>
             )}
           </Grid>
           <Grid size={{xs:12,sm:6, md:2}}>
@@ -81,16 +93,42 @@ export function GameRow({
                 ))}
               </Select>
             ) : (
-              <Typography variant="body2">{match.location ?? "–"}</Typography>
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                paddingX: 1,
+                borderRadius: '4px',
+                justifyContent: 'center'
+              }}
+            >
+              <Typography variant="body1">{match.location ?? "–"}</Typography>
+            </Box>
             )}
           </Grid>
 
           <Grid size={{xs:12,sm:6, md:2}}>
+           <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                paddingX: 1,
+                borderRadius: '4px',
+                justifyContent: 'center'
+              }}
+            >
             <Typography>{match.playerA}</Typography>
+            </Box>
           </Grid>
 
           <Grid size={{xs:12,sm:6, md:2}}>
-            {editable && dateValue && selectedCourtId ? (
+            <Grid container spacing={1} alignItems="center" justifyContent="center">
+              
+            {match.isFinished ? (
+              <Typography>
+                {match.scoreA} : {match.scoreB}
+              </Typography>
+            ):(  
               <Grid container spacing={1}>
                 <Grid size="auto">
                   <TextField
@@ -115,29 +153,42 @@ export function GameRow({
                   />
                 </Grid>
               </Grid>
-            ) : match.isFinished ? (
-              <Typography>
-                {match.scoreA} : {match.scoreB}
-              </Typography>
-            ) : (
-              <Typography variant="caption" color="text.secondary">
-                Ustaw datę i kort
-              </Typography>
             )}
           </Grid>
+         </Grid>
 
           <Grid size={{xs:12,sm:6, md:2}}>
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                paddingX: 1,
+                borderRadius: '4px',
+                justifyContent: 'center'
+              }}
+            >
             <Typography>{match.playerB}</Typography>
+            </Box>
           </Grid>
           {!match.isFinished && (
-          <Grid>
+          <Grid size={{xs:12,sm:6, md:2}}>
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                paddingX: 1,
+                borderRadius: '4px',
+                justifyContent: 'flex-end'
+              }}
+            >
              <Button
-              onClick={() => handleSave(match.id)}
+              onClick={() => onSave(match.id)}
               sx={{ mt: 1 }}
               variant="contained"
             >
               Zapisz
             </Button>
+            </Box>
           </Grid>
           )
           }

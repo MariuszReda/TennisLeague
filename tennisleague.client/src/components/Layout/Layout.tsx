@@ -11,6 +11,7 @@ export default function Layout() {
      setSidebarOpen((prev) => !prev);
   };
 
+
   return (
     <Box sx={{ display: "flex", flexDirection: "column", height: "100vh" }}>
       <Navbar onToggleSidebar={handleToggleSidebar} sidebarCollapsed={sidebarOpen} />
