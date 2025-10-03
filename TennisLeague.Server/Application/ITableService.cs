@@ -1,6 +1,6 @@
-﻿using TennisLeague.Server.Dto;
+﻿using TennisLeague.Server.API.Dto;
 
-namespace TennisLeague.Server.Interface
+namespace TennisLeague.Server.Application
 {
     public interface ITableService
     {

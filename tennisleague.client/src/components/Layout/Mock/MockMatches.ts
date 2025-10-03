@@ -1,4 +1,9 @@
+import type { Court } from "../../../model/Court";
 import type { Match } from "../../../model/Match";
+import { MockCourts } from "./MockCourts";
+
+const findCourtByName = (name: string): Court | null =>
+  MockCourts.find((court) => court.name === name) ?? null;
 
 export const MockMatches: Match[] = [
   {
@@ -14,7 +19,7 @@ export const MockMatches: Match[] = [
   {
     id: 2,
     date: "2025-06-21T14:00:00",
-    location: "Kort 2",
+    location: findCourtByName("Kort 2"),
     playerA: "Ewa Wiśniewska",
     playerB: "Anna Zielińska",
     scoreA: 2,
@@ -24,7 +29,7 @@ export const MockMatches: Match[] = [
   {
     id: 3,
     date: "2025-06-25T12:00:00",
-    location: "Kort 5",
+    location: findCourtByName("Kort 3"),
     playerA: "Paweł Nowak",
     playerB: "Krzysztof Maj",
     scoreA: null,

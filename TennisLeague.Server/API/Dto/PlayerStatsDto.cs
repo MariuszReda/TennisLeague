@@ -1,4 +1,4 @@
-﻿namespace TennisLeague.Server.Dto
+﻿namespace TennisLeague.Server.API.Dto
 {
     public class PlayerStatsDto
     {

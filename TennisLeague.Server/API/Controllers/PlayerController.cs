@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace TennisLeague.Server.Controllers
+namespace TennisLeague.Server.API.Controllers
 {
     public class PlayerController : Controller
     {

@@ -15,7 +15,7 @@ export default function MyGames(){
     useEffect(()=>{
         setMatches(MockMatches);
         setCourts(MockCourts)
-        const sorted = matches.sort((a,b)=>{
+        matches.sort((a,b)=>{
              return new Date(a.date || "").getTime() - new Date(b.date || "").getTime();
         })
     }, []);

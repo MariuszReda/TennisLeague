@@ -1,5 +1,5 @@
-using TennisLeague.Server.Interface;
-using TennisLeague.Server.Services;
+using TennisLeague.Server.Application;
+using TennisLeague.Server.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

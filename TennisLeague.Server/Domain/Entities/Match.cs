@@ -1,4 +1,4 @@
-﻿namespace TennisLeague.Server.Entities
+﻿namespace TennisLeague.Server.Domain.Entities
 {
     public class Match
     {

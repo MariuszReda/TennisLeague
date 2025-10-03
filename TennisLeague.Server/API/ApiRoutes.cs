@@ -1,4 +1,4 @@
-﻿namespace TennisLeague.Server
+﻿namespace TennisLeague.Server.API
 {
     public static class ApiRoutes
     {

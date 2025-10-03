@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TennisLeague.Server.Dto;
-using TennisLeague.Server.Interface;
+using TennisLeague.Server.API.Dto;
+using TennisLeague.Server.Application;
 using TennisLeague.Server.Services;
 
-namespace TennisLeague.Server.Controllers
+namespace TennisLeague.Server.API.Controllers
 {
     [ApiController]
     [Route(ApiRoutes.Table.BaseRoute)]

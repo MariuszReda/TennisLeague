@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace TennisLeague.Server.Controllers
+namespace TennisLeague.Server.API.Controllers
 {
-    public class MatchController : Controller
+    public class AccountController : Controller
     {
         public IActionResult Index()
         {
