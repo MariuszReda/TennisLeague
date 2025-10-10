@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TennisLeague.Server.API.Dto;
 using TennisLeague.Server.Application;
-using TennisLeague.Server.Services;
 
 namespace TennisLeague.Server.API.Controllers
 {

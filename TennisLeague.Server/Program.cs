@@ -1,8 +1,12 @@
+using Microsoft.EntityFrameworkCore;
 using TennisLeague.Server.Application;
+using TennisLeague.Server.Infrastructure.Persistence;
 using TennisLeague.Server.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<TennisLeagueDbContext>(
+    context => context.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
