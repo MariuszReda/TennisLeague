@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using TennisLeague.Server.Domain.Entities;
+using TennisLeague.Server.Infrastructure.Persistence.Entities;
 
 namespace TennisLeague.Server.Infrastructure.Persistence.Configurations
 {

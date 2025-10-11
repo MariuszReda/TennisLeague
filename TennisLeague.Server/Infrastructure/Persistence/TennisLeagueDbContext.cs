@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using TennisLeague.Server.Domain.Entities;
 using TennisLeague.Server.Infrastructure.Persistence.Configurations;
+using TennisLeague.Server.Infrastructure.Persistence.Entities;
 
 namespace TennisLeague.Server.Infrastructure.Persistence
 {

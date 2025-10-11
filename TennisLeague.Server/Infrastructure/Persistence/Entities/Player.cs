@@ -1,4 +1,4 @@
-﻿namespace TennisLeague.Server.Domain.Entities
+﻿namespace TennisLeague.Server.Infrastructure.Persistence.Entities
 {
     public class Player
     {

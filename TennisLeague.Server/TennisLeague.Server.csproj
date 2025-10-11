@@ -32,6 +32,7 @@
 
   <ItemGroup>
     <Folder Include="Domain\Aggregates\" />
+    <Folder Include="Domain\Entities\" />
     <Folder Include="Domain\Services\" />
     <Folder Include="Domain\ValueObjects\" />
     <Folder Include="Identity\" />

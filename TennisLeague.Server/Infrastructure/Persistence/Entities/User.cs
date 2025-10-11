@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace TennisLeague.Server.Domain.Entities
+namespace TennisLeague.Server.Infrastructure.Persistence.Entities
 {
     public class User : IdentityUser
     {
