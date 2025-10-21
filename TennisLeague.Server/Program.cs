@@ -1,6 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using TennisLeague.Server.Application;
+using TennisLeague.Server.Application.Interfaces;
+using TennisLeague.Server.Application.Services;
+using TennisLeague.Server.Domain.Repositories;
+using TennisLeague.Server.Domain.Services;
 using TennisLeague.Server.Infrastructure.Persistence;
+using TennisLeague.Server.Infrastructure.Repositories;
 using TennisLeague.Server.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +18,10 @@ builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<ITableService, MockTableService>();
-
+builder.Services.AddScoped<IMatchAppService, MatchAppService>();
+builder.Services.AddScoped<IMatchRepository, MatchRepository>();
+builder.Services.AddScoped<IPlayerRepository, PlayerRepository>();
+builder.Services.AddScoped<MatchResultService, MatchResultService>();
 
 var app = builder.Build();
 

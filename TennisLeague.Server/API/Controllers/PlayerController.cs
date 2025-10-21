@@ -2,11 +2,8 @@
 
 namespace TennisLeague.Server.API.Controllers
 {
-    public class PlayerController : Controller
+    public class PlayerController : ControllerBase
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+
     }
 }
